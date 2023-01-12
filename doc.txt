@@ -1,0 +1,23 @@
+Aplikasi CRUD data siswa
+
+- 3 level user (admin,kepsek,guru)
+
+- admin : CRUD data siswa dan guru
+- kepsek : - view & edit data siswa dan guru
+	   - generate laporan jumlah guru dan siswa
+- guru : - view data siswa
+	 - create jadwal mengajar
+
+DB
+
+- users => id, username, password, level
+- siswa => id, nama, nis, jk, alamat, kelas, tglMasuk
+- guru => id, nip, nama, jk, mataPel
+- jadwal => id, mapel, namaGuru, jam, kelas, hari
+
+step
+
+1. Membuat Model Login (php spark make:model) LoginModel.php
+2. Membuat Controller login (php spark make:controller) Login.php	
+3. Membuat View Login (auth/login)
+4. Membuat Fitur Admin, Guru, Kepsek
