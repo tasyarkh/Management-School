@@ -57,5 +57,9 @@ class UserModel extends Model
         return $query;
     }
 
-    //getUser
+    public function countUser(){
+        $builder = $this->db->table('user');
+        $query = $builder->countAllResults();
+        return $query;
+    }
 }

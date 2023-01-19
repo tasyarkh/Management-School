@@ -17,7 +17,7 @@ $session = \Config\Services::session();
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Tambah Data Guru</title>
+    <title>Tambah User</title>
 
     <meta name="description" content="" />
 
@@ -142,7 +142,7 @@ $session = \Config\Services::session();
             <li class="menu-header small text-uppercase">
               <span class="menu-header-text">Guru</span>
             </li>
-            <li class="menu-item active">
+            <li class="menu-item">
               <a href="<?= base_url('guru'); ?>" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-dock-top"></i>
                 <div data-i18n="Account Settings">Data Guru</div>
@@ -153,7 +153,7 @@ $session = \Config\Services::session();
                     <div data-i18n="Account">Semua Guru</div>
                   </a>
                 </li>
-                <li class="menu-item active">
+                <li class="menu-item">
                   <a href="<?= base_url('guru/create'); ?>" class="menu-link">
                     <div data-i18n="Account">Tambah Guru</div>
                   </a>
@@ -185,7 +185,7 @@ $session = \Config\Services::session();
               </ul>
             </li>
             <li class="menu-header small text-uppercase"><span class="menu-header-text">User</span></li>
-            <li class="menu-item">
+            <li class="menu-item active">
               <a href="<?= base_url('user'); ?>" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-user"></i>
                 <div data-i18n="Analytics">General User</div>
@@ -285,46 +285,66 @@ $session = \Config\Services::session();
                 <div class="col-xxl">
                   <div class="card mb-4">
                     <div class="card-header d-flex align-items-center justify-content-between">
-                      <h5 class="mb-0">Masukan Data Guru</h5>
-                      <small class="text-muted float-end">Data guru</small>
+                      <h5 class="mb-0">Masukan Data User</h5>
+                      <small class="text-muted float-end">Data User</small>
                     </div>
                     <div class="card-body">
-                      <form method="POST" action="<?= base_url('/guru/save'); ?>">
+                      <form method="POST" action="<?= base_url('/user/save'); ?>">
                       <?= csrf_field(); ?>
                         <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="nip">NIP</label>
+                          <label class="col-sm-2 col-form-label" for="namaUser">Nama User</label>
                           <div class="col-sm-10">
-                            <input type="text" class="form-control" id="nip" name="nip" />
+                            <input type="text" class="form-control" id="namaUser" name="namaUser" />
                           </div>
                         </div>
                         <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="basic-default-company">Nama Guru</label>
+                          <label class="col-sm-2 col-form-label" for="username">Username</label>
                           <div class="col-sm-10">
                             <input
                               type="text"
                               class="form-control"
-                              id="namaGuru" name="namaGuru"
+                              id="username" name="username"
                             />
                           </div>
                         </div>
                         <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="basic-default-phone">Jenis Kelamin</label>
+                          <label class="col-sm-2 col-form-label" for="password">Password</label>
                           <div class="col-sm-10">
-                          <select class="form-control" aria-label="Default select example" name="jk" required>
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="password" name="password"
+                            />
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label class="col-sm-2 col-form-label" for="level">Level</label>
+                          <div class="col-sm-10">
+                          <select class="form-control" aria-label="Default select example" name="level" required>
                             <option selected>Pilih</option>
-                            <option value="Wanita">Wanita</option>
-                            <option value="Pria">Pria</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
                         </select>
                           </div>
                         </div>
                         <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="basic-default-phone">Mata Pelajaran</label>
+                          <label class="col-sm-2 col-form-label" for="jabatan">Jabatan</label>
                           <div class="col-sm-10">
-                            <input
-                              type="text"
-                              id="mapel" name="mapel"
-                              class="form-control phone-mask"
-                            />
+                          <select class="form-control" aria-label="Default select example" name="jabatan" required>
+                            <option selected>Pilih</option>
+                            <option value="Admin">Admin</option>
+                            <option value="Kepsek">Kepsek</option>
+                        </select>
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label class="col-sm-2 col-form-label" for="basic-default-phone">Status</label>
+                          <div class="col-sm-10">
+                          <select class="form-control" aria-label="Default select example" name="status" required>
+                            <option selected>Pilih</option>
+                            <option value="Aktif">Aktif</option>
+                            <option value="Pasif">Pasif</option>
+                        </select>
                           </div>
                         </div>
                         <div class="row justify-content-end">

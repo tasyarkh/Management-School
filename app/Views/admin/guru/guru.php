@@ -137,14 +137,19 @@
               <span class="menu-header-text">Guru</span>
             </li>
             <li class="menu-item active">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
+              <a href="<?= base_url('guru'); ?>" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-dock-top"></i>
                 <div data-i18n="Account Settings">Data Guru</div>
               </a>
               <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="pages-account-settings-account.html" class="menu-link">
+                <li class="menu-item active">
+                  <a href="<?= base_url('guru'); ?>" class="menu-link">
                     <div data-i18n="Account">Semua Guru</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="<?= base_url('guru/create'); ?>" class="menu-link">
+                    <div data-i18n="Account">Tambah Guru</div>
                   </a>
                 </li>
               </ul>
@@ -303,10 +308,10 @@
                               <i class="bx bx-dots-vertical-rounded"></i>
                             </button>
                             <div class="dropdown-menu">
-                              <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#update" data-id="<?= $row['idGuru']; ?>"
+                              <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#update" data-idGuru="<?= $row['idGuru']; ?>" data-nip="<?= $row['nip']; ?>" data-namaGuru="<?= $row['namaGuru']; ?>" data-jk="<?= $row['jk']; ?>" data-mapel="<?= $row['mapel']; ?>"
                                 ><i class="bx bx-edit-alt me-1"></i> Edit</a
                               >
-                              <a class="dropdown-item" href="#" data-href="<?= base_url('admin/delete') . '/' . $row['idGuru']; ?>" data-bs-toggle="modal" data-bs-target="#konfirmasi_hapus"
+                              <a class="dropdown-item" href="#" data-href="<?= base_url('guru/delete') . '/' . $row['idGuru']; ?>" data-bs-toggle="modal" data-bs-target="#konfirmasi_hapus"
                                 ><i class="bx bx-trash me-1"></i> Delete</a
                               >
                             </div>
@@ -348,29 +353,29 @@
                 <form method="POST" action="<?= base_url('/guru/edit'); ?>">
                     <?= csrf_field(); ?>
                     <div class="mb-3">
-                        <label for="id" class="form-label">ID Guru</label>
+                        <label for="idGuru" class="form-label">ID Guru</label>
                         <input type="text" class="form-control" id="idGuru_u" name="idGuru" required readonly>
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">NIP</label>
+                        <label for="nip" class="form-label">NIP</label>
                         <input type="text" class="form-control" id="nip_u" name="nip" required>
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Nama Guru</label>
+                        <label for="namaGuru" class="form-label">Nama Guru</label>
                         <input type="text" class="form-control" id="namaGuru_u" name="namaGuru" required>
 
                     </div>
 
                     <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Jenis Kelamin</label>
+                        <label for="jk" class="form-label">Jenis Kelamin</label>
                         <select class="form-control" aria-label="Default select example" name="jk" required id="jk_u">
                             <option>Jenis Kelamin</option>
-                            <option value="1">Wanita</option>
-                            <option value="2">Pria</option>
+                            <option value="Wanita">Wanita</option>
+                            <option value="Pria">Pria</option>
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Mata Pelajaran</label>
+                        <label for="mapel" class="form-label">Mata Pelajaran</label>
                         <input type="text" class="form-control" id="mapel_u" name="mapel" required>
                     </div>
               </div>

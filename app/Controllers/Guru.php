@@ -25,6 +25,10 @@ class Guru extends BaseController
         return view('admin/guru/guru', $data);
     }
 
+    public function pcreate(){
+        return view('admin/guru/create');
+    }
+
     //create Guru
     public function create(){
         if (!$this->validate(
@@ -53,7 +57,7 @@ class Guru extends BaseController
 
         $this->guruModel->createGuru($data);
         session()->setFlashdata('userSimpan', 'Data Guru Disimpan');
-        return redirect()->to(base_url('guru/create'));
+        return redirect()->to(base_url('guru'));
     }
 
     //fungsi untuk menghapus data
@@ -79,4 +83,55 @@ class Guru extends BaseController
         session()->setFlashdata('userEdit', 'Data guru berhasil diubah');
         return redirect()->to(base_url('guru'));
     }
+
+    public function update($idGuru)
+    {
+        helper(['form', 'url']);
+
+        // $validation = $this->validate([
+        //     'title' => [
+        //         'rules'  => 'required',
+        //         'errors' => [
+        //             'required' => 'Masukkan Judul Post.'
+        //         ]
+        //     ],
+        //     'content'    => [
+        //         'rules'  => 'required',
+        //         'errors' => [
+        //             'required' => 'Masukkan konten Post.'
+        //         ]
+        //     ],
+        // ]);
+
+        // if(!$validation) {
+
+        //     //model initialize
+        //     $usermodel = new UserModel();
+
+        //     //render view with error validation message
+        //     return view('datusr', [
+        //         'edit' => $usermodel->find($id),
+        //         'validation' => $this->validator
+        //     ]);
+
+        // } else {
+
+            //model initialize
+            $usermodel = new UserModel();
+            
+            //insert data into database
+            $guruModel->update($idGuru, [
+                'idGuru'   => $this->request->getPost('idGuru'),
+                'nip' => $this->request->getPost('nip'),
+                'namaGuru' => $this->request->getPost('namaGuru'),
+                'jk' => $this->request->getPost('jk'),
+                'mapel' => $this->request->getPost('mapel')
+            ]);
+
+            //flash message
+            session()->setFlashdata('userEdit', 'User Berhasil Diupdate');
+
+            return redirect()->to(base_url('guru'));
+                    //   }
+        }
 }

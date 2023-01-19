@@ -5,15 +5,14 @@ Aplikasi CRUD data siswa
 - admin : CRUD data siswa dan guru
 - kepsek : - view & edit data siswa dan guru
 	   - generate laporan jumlah guru dan siswa
-- guru : - view data siswa
-	 - create jadwal mengajar
+
 
 DB
 
 - users => id, username, password, level
 - siswa => id, nama, nis, jk, alamat, kelas, tglMasuk
 - guru => id, nip, nama, jk, mataPel
-- jadwal => id, mapel, namaGuru, jam, kelas, hari
+
 
 step
 

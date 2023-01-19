@@ -143,7 +143,7 @@ $session = \Config\Services::session();
               <span class="menu-header-text">Guru</span>
             </li>
             <li class="menu-item">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
+              <a href="<?= base_url('guru'); ?>" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-dock-top"></i>
                 <div data-i18n="Account Settings">Data Guru</div>
               </a>
@@ -154,7 +154,7 @@ $session = \Config\Services::session();
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a href="<?= base_url('/guru/create'); ?>" class="menu-link">
+                  <a href="<?= base_url('guru/create'); ?>" class="menu-link">
                     <div data-i18n="Account">Tambah Guru</div>
                   </a>
                 </li>
@@ -331,14 +331,14 @@ $session = \Config\Services::session();
                                 <i class="bx bx-dots-vertical-rounded"></i>
                               </button>
                               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt3">
-                                <a class="dropdown-item" href="javascript:void(0);">View More</a>
+                                <a class="dropdown-item" href="<?= base_url('guru'); ?>">View More</a>
                               
                               </div>
                             </div>
                           </div>
-                          <span class="fw-semibold d-block mb-1">Jumlah Guru</span>
-                          <h3 class="card-title mb-2">$12,628</h3>
-                          <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> 100%</small>
+                          <span class="fw-semibold d-block mb-1">Total Guru</span>
+                          <h3 class="card-title mb-2"><?= $guru; ?></h3>
+                          
                         </div>
                       </div>
                     </div>
@@ -349,7 +349,6 @@ $session = \Config\Services::session();
                             <div class="avatar flex-shrink-0">
                               <img
                                 src="assets/img/icons/unicons/chart-success.png"
-                                
                                 class="rounded"
                               />
                             </div>
@@ -357,22 +356,22 @@ $session = \Config\Services::session();
                               <button
                                 class="btn p-0"
                                 type="button"
-                                id="cardOpt6"
+                                id="cardOpt3"
                                 data-bs-toggle="dropdown"
                                 aria-haspopup="true"
                                 aria-expanded="false"
                               >
                                 <i class="bx bx-dots-vertical-rounded"></i>
                               </button>
-                              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt6">
-                                <a class="dropdown-item" href="javascript:void(0);">View More</a>
+                              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt3">
+                                <a class="dropdown-item" href="<?= base_url('guru'); ?>">View More</a>
                               
                               </div>
                             </div>
                           </div>
-                          <span>Siswa Kelas 10</span>
-                          <h3 class="card-title text-nowrap mb-1">$4,679</h3>
-                          <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> 95%</small>
+                          <span class="fw-semibold d-block mb-1">Total Siswa</span>
+                          <h3 class="card-title mb-2"><?= $guru; ?></h3>
+                          
                         </div>
                       </div>
                     </div>
@@ -419,66 +418,6 @@ $session = \Config\Services::session();
                 <!--/ Total Revenue -->
                 <div class="col-12 col-md-8 col-lg-4 order-3 order-md-2">
                   <div class="row">
-                    <div class="col-6 mb-4">
-                      <div class="card">
-                        <div class="card-body">
-                          <div class="card-title d-flex align-items-start justify-content-between">
-                            <div class="avatar flex-shrink-0">
-                              <img src="assets/img/icons/unicons/chart-success.png"alt="Credit Card" class="rounded" />
-                            </div>
-                            <div class="dropdown">
-                              <button
-                                class="btn p-0"
-                                type="button"
-                                id="cardOpt4"
-                                data-bs-toggle="dropdown"
-                                aria-haspopup="true"
-                                aria-expanded="false"
-                              >
-                                <i class="bx bx-dots-vertical-rounded"></i>
-                              </button>
-                              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt4">
-                                <a class="dropdown-item" href="javascript:void(0);">View More</a>
-                              
-                              </div>
-                            </div>
-                          </div>
-                          <span class="d-block mb-1">Siswa Kelas 11</span>
-                          <h3 class="card-title text-nowrap mb-2">$2,456</h3>
-                          <small class="text-danger fw-semibold"><i class="bx bx-down-arrow-alt"></i> 90%</small>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-6 mb-4">
-                      <div class="card">
-                        <div class="card-body">
-                          <div class="card-title d-flex align-items-start justify-content-between">
-                            <div class="avatar flex-shrink-0">
-                              <img src="assets/img/icons/unicons/chart-success.png"alt="Credit Card" class="rounded" />
-                            </div>
-                            <div class="dropdown">
-                              <button
-                                class="btn p-0"
-                                type="button"
-                                id="cardOpt1"
-                                data-bs-toggle="dropdown"
-                                aria-haspopup="true"
-                                aria-expanded="false"
-                              >
-                                <i class="bx bx-dots-vertical-rounded"></i>
-                              </button>
-                              <div class="dropdown-menu" aria-labelledby="cardOpt1">
-                                <a class="dropdown-item" href="javascript:void(0);">View More</a>
-                              
-                              </div>
-                            </div>
-                          </div>
-                          <span class="fw-semibold d-block mb-1">Siswa Kelas 12</span>
-                          <h3 class="card-title mb-2">$14,857</h3>
-                          <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> 100%</small>
-                        </div>
-                      </div>
-                    </div>
                     <!-- </div>
     <div class="row"> -->
                     <div class="col-12 mb-4">
@@ -487,18 +426,17 @@ $session = \Config\Services::session();
                           <div class="d-flex justify-content-between flex-sm-row flex-column gap-3">
                             <div class="d-flex flex-sm-column flex-row align-items-start justify-content-between">
                               <div class="card-title">
-                                <h5 class="text-nowrap mb-2">Total Guru</h5>
-                                <span class="badge bg-label-warning rounded-pill">Year 2023</span>
+                                <h5 class="text-nowrap mb-2">Total User</h5>
+                                
                               </div>
                               <div class="mt-sm-auto">
-                                <small class="text-success text-nowrap fw-semibold"
-                                  ><i class="bx bx-chevron-up"></i> 20%</small
-                                >
-                                <h3 class="mb-0">$84,686k</h3>
+                                <h3 class="mb-0"><?= $user; ?></h3>
                               </div>
                             </div>
+                            
                             <div id="profileReportChart"></div>
                           </div>
+                          
                         </div>
                       </div>
                     </div>

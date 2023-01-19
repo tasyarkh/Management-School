@@ -51,8 +51,13 @@ $routes->get('/admin', 'Admin::index');
 //admin->guru
 $routes->get('/guru', 'Guru::index');
 $routes->post('/guru/delete', 'Guru::delete');
-$routes->post('/guru/create', 'Guru::create');
+$routes->get('/guru/create', 'Guru::pcreate');
+$routes->post('/guru/save', 'Guru::create');
+$routes->post('/guru/edit', 'Guru::edit');
 
+//admin->general user
+$routes->get('/user', 'User::index');
+$routes->post('/user/save', 'User::create');
 
 //kepsek
 $routes->get('/kepsek', 'Kepsek::index');
