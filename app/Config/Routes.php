@@ -59,6 +59,9 @@ $routes->post('/guru/edit', 'Guru::edit');
 $routes->get('/user', 'User::index');
 $routes->post('/user/save', 'User::create');
 
+//admin->siswa
+$routes->get('/siswa', 'Siswa::pcreate');
+
 //kepsek
 $routes->get('/kepsek', 'Kepsek::index');
 

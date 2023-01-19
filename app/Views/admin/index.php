@@ -182,6 +182,11 @@ $session = \Config\Services::session();
                     <div data-i18n="Badges">Kelas 12</div>
                   </a>
                 </li>
+                <li class="menu-item">
+                  <a href="<?= base_url('/siswa'); ?>" class="menu-link">
+                    <div data-i18n="Account">Tambah Siswa</div>
+                  </a>
+                </li>
               </ul>
             </li>
             <li class="menu-header small text-uppercase"><span class="menu-header-text">User</span></li>
